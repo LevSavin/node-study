@@ -1,6 +1,8 @@
 import colors from "colors"
 
-const [min, max] = process.argv.slice(2);
+let [min, max] = process.argv.slice(2);
+min = +min;
+max = +max;
 
 const showError = () => {
   const userError = new TypeError("Parameter is not a number");
@@ -22,15 +24,19 @@ const showNumbers = () => {
       currentindex = 0;
     }
   }
-  
-  for (let number = min; number <= max; number++) {
-    if (number % 2 === 0) {
-      console.log(colors[colorsArray[currentindex]](number));
-      hasSimpleNumbers = true;
-      setNextIndex();
+
+  nextPrime:
+  for (let i = min; i <= max; i++) {
+
+    for (let j = 2; j < i; j++) {
+      if (i % j === 0) continue nextPrime;
     }
+
+    console.log(colors[colorsArray[currentindex]](i));
+    hasSimpleNumbers = true;
+    setNextIndex();
   }
-  
+    
   if (!hasSimpleNumbers) {
     console.log(colors.red("Простых чисел нет"));
   }
