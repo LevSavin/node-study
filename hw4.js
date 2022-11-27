@@ -58,7 +58,7 @@ if (inPath.length === 0) {
 // node hw4.js lesson-4/someDir
 
 // Строка для поиска всегда вторым параметром, после пути:
-// node hw4.js lesson-4/someDir
+// node hw4.js lesson-4/someDir 176.212.24.22
 
 // Передача строки для поиска без параметра пути
 // node hw4.js '' 176.212.24.22
