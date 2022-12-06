@@ -1,8 +1,6 @@
 import inquirer from "inquirer"
-import fs from "fs"
 import fsp from "fs/promises"
 import path from "path"
-import { Transform } from "stream"
 
 const inPath = process.argv.slice(2);
 
