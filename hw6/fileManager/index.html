@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Directories</title>
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"
+        integrity="sha384-/KNQL8Nu5gCHLqwqfQjA689Hhoqgi2S84SNUxC3roTe4EhJ9AfLkp8QiQcU8AMzI"
+        crossorigin="anonymous">
+    </script>
+</head>
+<body>
+    <p>clients count
+        <span id="count"></span>
+    </p>
+    <ul>
+        #filelinks#
+    </ul>
+</body>
+
+<script type="text/javascript">
+    const socket = io('localhost:3000')
+    socket.on('connect', () => console.log('Connection with localhost:3000 created'))
+    socket.on('count', ({ count }) => {
+        document.getElementById('count').innerText = count;
+    })
+</script>
+
+</html>
